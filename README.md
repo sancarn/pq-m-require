@@ -11,11 +11,11 @@ TBC
 ### Requiring by File
 
 ```pq
-require[byFile]("C:\myFile.m")
+require[File]("C:\myFile.m")
 ```
 
 ### Requiring by Web URL
 
 ```pq
-require[byWeb]("C:\myFile.m")
+require[Web]("C:\myFile.m")
 ```
