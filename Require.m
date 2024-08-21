@@ -1,7 +1,8 @@
 //2024-04-09 Modified by Sancarn. Adapted from code provided by `/u/MonkeyNin` on [reddit](https://www.reddit.com/r/PowerBI/comments/1b43ces/comment/ktn0w8b/).
 //Usage:
-//Require[File]("C:\myFile.m")
-//Require[Web]("http://someCDN.com/myFile.m")
+//require[File]("C:\myFile.m")
+//require[Web]("http://someCDN.com/myFile.m")
+//
 let
     FileContent = (filePath as text, optional options as nullable record) as text =>
         let
@@ -33,9 +34,7 @@ let
             lines,
     EvaluateSnippet = (code as text, optional options as nullable record) as any =>
         let
-            environment = options[Environment]? ?? #shared,
-            //evaluate
-            return = Expression.Evaluate(code, environment)
+            environment = options[Environment]? ?? #shared, return = Expression.Evaluate(code, environment)
         in
             return,
     Convert.ScriptExtent.FromError = (err as any) =>
